@@ -6,13 +6,13 @@
 
 <fx:root type="is.vidmot.view.FerdSpjald" xmlns:fx="http://javafx.com/fxml">
     <VBox spacing="10" style="-fx-padding: 15;">
-        <Label text="Trip Name:" style="-fx-font-weight: bold;"/>
+        <Label text="Heiti ferðar:" style="-fx-font-weight: bold;"/>
         <TextField fx:id="fxHeiti" editable="false"/>
 
-        <Label text="Destination:" style="-fx-font-weight: bold;"/>
+        <Label text="Áfangastaður:" style="-fx-font-weight: bold;"/>
         <TextField fx:id="fxAfangastadur" editable="false"/>
 
-        <Label text="Date:" style="-fx-font-weight: bold;"/>
+        <Label text="Dagsetning:" style="-fx-font-weight: bold;"/>
         <TextField fx:id="fxDagsetning" editable="false"/>
     </VBox>
 </fx:root>

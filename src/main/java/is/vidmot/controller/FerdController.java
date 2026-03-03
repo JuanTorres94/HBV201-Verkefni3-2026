@@ -27,10 +27,6 @@ public class FerdController implements GognInterface {
 
     @FXML
     private void onTilBaka() {
-        try {
-            ViewSwitcher.switchTo(View.ADAL, false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        ViewSwitcher.switchTo(View.ADAL, false);
     }
 }

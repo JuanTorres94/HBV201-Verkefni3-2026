@@ -1,9 +1,9 @@
 package is.vidmot.controller;
 
-import javafx.fxml.FXML;
-import javafx.stage.Stage;
-import javafx.scene.Node;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.stage.Stage;
 
 public class StadfestingEydingDialogController {
     private boolean confirmed = false;
@@ -11,13 +11,16 @@ public class StadfestingEydingDialogController {
     @FXML
     private void onConfirm(ActionEvent event) {
         confirmed = true;
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+        closeDialog(event);
     }
 
     @FXML
     private void onCancel(ActionEvent event) {
         confirmed = false;
+        closeDialog(event);
+    }
+
+    private void closeDialog(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }

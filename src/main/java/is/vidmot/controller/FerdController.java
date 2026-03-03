@@ -7,14 +7,18 @@ import is.vidmot.switcher.ViewSwitcher;
 import is.vinnsla.Ferd;
 
 /**
- * Controller for displaying details of a single trip.
+ * Controller fyrir ferðaviðmótið (ferd-view.fxml).
+ * Sýnir nánari upplýsingar um eina ferð með FerdSpjald sérhæfðum hlut.
  */
 public class FerdController implements GognInterface {
+    /** Sérhæfður viðmótshlutur sem sýnir upplýsingar um ferð. */
     @FXML
     private FerdSpjald fxFerdSpjald;
 
     /**
-     * Receives a trip and binds its data to the FerdSpjald component.
+     * Tekur á móti ferð og bindur gögn hennar við FerdSpjald.
+     *
+     * @param ferd ferðin sem á að sýna
      */
     @Override
     public void setGogn(Ferd ferd) {
@@ -25,6 +29,9 @@ public class FerdController implements GognInterface {
         }
     }
 
+    /**
+     * Fer til baka í aðalviðmótið.
+     */
     @FXML
     private void onTilBaka() {
         ViewSwitcher.switchTo(View.ADAL, false);

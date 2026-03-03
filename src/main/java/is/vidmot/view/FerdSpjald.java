@@ -8,23 +8,29 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 /**
- * Custom component to display trip details.
- * Wraps ferd-spjald.fxml and exposes properties for data binding.
+ * Sérhæfður viðmótshlutur (custom component) sem sýnir upplýsingar um ferð.
+ * Hleður ferd-spjald.fxml og býður upp á properties til gagnabindingar.
  */
 public class FerdSpjald extends VBox {
+    /** Textareitur fyrir nafn ferðar. */
     @FXML
     private TextField fxHeiti;
+    /** Textareitur fyrir áfangastað. */
     @FXML
     private TextField fxAfangastadur;
+    /** Textareitur fyrir dagsetningu. */
     @FXML
     private TextField fxDagsetning;
 
+    /** Property fyrir nafn ferðar. */
     private final StringProperty heiti = new SimpleStringProperty();
+    /** Property fyrir áfangastað. */
     private final StringProperty afangastadur = new SimpleStringProperty();
+    /** Property fyrir dagsetningu. */
     private final StringProperty dagsetning = new SimpleStringProperty();
 
     /**
-     * Constructor that loads the FXML file.
+     * Smiður sem hleður FXML skránni og bindur textareiti við properties.
      */
     public FerdSpjald() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/is/vidmot/ferd-spjald.fxml"));
@@ -39,7 +45,7 @@ public class FerdSpjald extends VBox {
     }
 
     /**
-     * Bind TextFields to the properties so they stay in sync.
+     * Bindur textareiti við tilsvarandi properties svo þau haldist samstillt.
      */
     private void bindTextFields() {
         fxHeiti.textProperty().bindBidirectional(heiti);
@@ -47,41 +53,83 @@ public class FerdSpjald extends VBox {
         fxDagsetning.textProperty().bindBidirectional(dagsetning);
     }
 
-    // Property getters for binding from other controllers
+    /**
+     * Skilar StringProperty fyrir nafn ferðar.
+     *
+     * @return nafn property
+     */
     public StringProperty nafnProperty() {
         return heiti;
     }
 
+    /**
+     * Skilar StringProperty fyrir áfangastað.
+     *
+     * @return áfangastaður property
+     */
     public StringProperty afangastadurProperty() {
         return afangastadur;
     }
 
+    /**
+     * Skilar StringProperty fyrir dagsetningu.
+     *
+     * @return dagsetning property
+     */
     public StringProperty dagsetningProperty() {
         return dagsetning;
     }
 
-    // Value getters
+    /**
+     * Skilar nafni ferðar.
+     *
+     * @return nafn
+     */
     public String getNafn() {
         return heiti.get();
     }
 
+    /**
+     * Skilar áfangastað.
+     *
+     * @return áfangastaður
+     */
     public String getAfangastadur() {
         return afangastadur.get();
     }
 
+    /**
+     * Skilar dagsetningu.
+     *
+     * @return dagsetning
+     */
     public String getDagsetning() {
         return dagsetning.get();
     }
 
-    // Value setters
+    /**
+     * Setur nafn ferðar.
+     *
+     * @param value nýtt nafn
+     */
     public void setNafn(String value) {
         heiti.set(value);
     }
 
+    /**
+     * Setur áfangastað.
+     *
+     * @param value nýr áfangastaður
+     */
     public void setAfangastadur(String value) {
         afangastadur.set(value);
     }
 
+    /**
+     * Setur dagsetningu.
+     *
+     * @param value ný dagsetning
+     */
     public void setDagsetning(String value) {
         dagsetning.set(value);
     }

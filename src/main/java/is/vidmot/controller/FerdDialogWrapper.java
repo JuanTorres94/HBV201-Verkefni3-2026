@@ -8,7 +8,18 @@ import javafx.stage.Modality;
 import is.vinnsla.Ferd;
 import java.io.IOException;
 
+/**
+ * Wrapper klasi sem sér um að opna og stjórna dialog til að bæta við ferð.
+ * Hleður ny-ferd-dialog.fxml og skilar nýrri ferð ef notandi staðfestir.
+ */
 public class FerdDialogWrapper {
+
+    /**
+     * Opnar modal dialog til að bæta við nýrri ferð.
+     *
+     * @param parentStage foreldra glugginn sem á dialoginn
+     * @return ný ferð ef staðfest, annars null
+     */
     public static Ferd showAddFerdDialog(Stage parentStage) {
         try {
             FXMLLoader loader = new FXMLLoader(FerdDialogWrapper.class.getResource("/is/vidmot/ny-ferd-dialog.fxml"));
